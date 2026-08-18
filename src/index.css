@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 267 84% 81%; /* mauve */
+  --color-primary-foreground: 240 21% 15%;
+
+  --color-secondary: 227 15% 75%;
+  --color-secondary-foreground: 240 21% 15%;
+
+  --color-background: 240 21% 11%; /* #11111b */
+  --color-foreground: 226 64% 88%; /* #cdd6f4 */
+
+  --color-card: 240 21% 15%; /* #1e1e2e */
+  --color-border: 237 16% 23%; /* #45475a */
+  --color-input: 237 16% 23%;
+
+  --color-muted-foreground: 228 13% 65%;
+
+  --color-destructive: 343 81% 75%;
+  --color-destructive-foreground: 240 21% 15%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #020b12;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DepartureMono";
+  color: rgb(var(--color-foreground));
+  background:
+    linear-gradient(rgba(7, 18, 21, 0.88), rgba(7, 18, 21, 0.88)),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* CRT effect styles */
+.crt-title {
+  font-family: "DepartureMono";
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  font-weight: 600;
+  color: rgb(var(--color-primary));
+  text-shadow:
+    0 0 4px rgba(203, 166, 247, 0.3),
+    0 0 12px rgba(203, 166, 247, 0.15);
+  transition: all 0.2s ease;
+}
+.crt-title:hover {
+  text-shadow:
+    0 0 8px rgba(203, 166, 247, 0.45),
+    0 0 18px rgba(203, 166, 247, 0.25);
+}
+
+.blink-caret {
+  animation: blink-caret 1s steps(1) infinite;
+}
+
+@keyframes blink-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Pixelated effect for pixel art */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+@font-face {
+  font-family: "DepartureMono";
+  src: url("./components/fonts/DepartureMono-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
